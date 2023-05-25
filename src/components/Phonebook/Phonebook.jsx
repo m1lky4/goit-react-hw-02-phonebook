@@ -16,7 +16,7 @@ export default class Phonebook extends Component {
     const { name, number } = this.state;
     const { onNewContact, contacts } = this.props;
 
-    const nameExists = contacts.some((contact) => contact.name === name);
+    const nameExists = contacts.some((contact) => contact.name.toLowerCase() === name.toLowerCase());
 
     if (nameExists) {
       alert('Contact with the same name already exists!');
